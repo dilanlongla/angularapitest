@@ -21,7 +21,8 @@
             [checked]="user.completed"
           />
         </td>
-        <td>{{user.title}}</td>
+        <td *ngIf="user.completed"><u>{{user.title}}</u></td>
+        <td *ngIf="!user.completed">{{user.title}}</td>
         <td>
           <span class="text-primary" (click)="remove(user.id)"
             ><svg
